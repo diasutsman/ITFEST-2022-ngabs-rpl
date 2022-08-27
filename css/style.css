@@ -1,0 +1,39 @@
+@import url(reset.css);
+@import url(base.css);
+
+:root {
+  --primary-color: #FFAF5F
+}
+
+nav {
+	display: flex;
+	justify-content: space-around;
+	padding: 20px;
+  align-items: center;
+}
+
+nav h1 {
+	font-weight: 700;
+	font-size: 30px;
+}
+
+nav ul {
+	display: flex;
+	width: 50%;
+	justify-content: space-between;
+}
+
+nav a {
+	text-decoration: none;
+	color: black;
+	font-weight: 400;
+  font-size: 20px;
+}
+
+nav button {
+  padding: 22.5px 34.5px;
+  background-color: var(--primary-color);
+  border-radius: 100px;
+  color: white;
+  font-size: 15px;
+}
