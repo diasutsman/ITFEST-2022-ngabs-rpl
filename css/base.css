@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
 
 :root {
-  --primary-color: #FFAF5F;
-  --secondary-color: #2831F6;
+  --primary-color: #333C6A;
+  --primary-color-variant: #3B4993;
+  --secondary-color: #FCC32F;
 }
 
 
@@ -11,10 +12,13 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Quicksand', sans-serif;
+  background-color: #F1F1F1;
+  font-weight: 700;
 }
 
 button {
   outline: none;
   border: none;
+  font-weight: inherit;
 }
