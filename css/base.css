@@ -4,6 +4,7 @@
 	--primary-color: #333c6a;
 	--primary-color-variant: #3b4993;
 	--secondary-color: #fcc32f;
+	--background-color: #f1f1f1;
 }
 
 * {
@@ -12,11 +13,8 @@
 
 body {
 	font-family: "Quicksand", sans-serif;
-	background-color: #f1f1f1;
+	background-color: var(--background-color);
 	font-weight: 700;
-	padding: 0 20px;
-	max-width: 1200px;
-	margin: auto;
 }
 
 button {
