@@ -1,0 +1,66 @@
+/* Responsive breakpoint */
+/* Tablet Screen */
+@media screen and (max-width: 775px) {
+	nav ul a {
+		font-size: 0.75em;
+	}
+}
+
+/* Mobile Screen */
+@media screen and (max-width: 700px) {
+	nav {
+		justify-content: space-between;
+	}
+
+	.menu-toggle {
+		display: flex;
+	}
+
+	nav ul {
+		position: absolute;
+		padding: 16px 0;
+		opacity: 0;
+		left: 0;
+		top: 0;
+		height: 100vh;
+		width: 80%;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-evenly;
+		z-index: 1;
+		background-color: var(--primary-color);
+		/* Hide the nav */
+		transform: translateX(-100%);
+
+		/* Add transition for every style changes applied */
+		transition: all 1s;
+	}
+
+	nav ul li a,
+	nav ul li a:hover {
+		color: white;
+	}
+	nav ul li a::after {
+		background-color: white;
+	}
+
+	.hero {
+		grid-template-areas:
+			"hero-heading"
+			"hero-text"
+			"hero-image";
+		grid-template-columns: 1fr;
+		justify-items: center;
+	}
+	
+	.hero img {
+		justify-self: center;
+	}
+}
+
+/* .slide class is added when burger is clicked */
+nav ul.slide {
+	/* Show the menu */
+	opacity: 1;
+	transform: translateX(0);
+}
