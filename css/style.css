@@ -5,12 +5,21 @@
 /* widget */
 @import url(burger.css);
 
+.container {
+	padding: 0 20px;
+	max-width: 1300px;
+	margin: auto;
+}
+
 /* Navigation */
 nav {
 	display: grid;
 	grid-template-columns: auto 3fr repeat(2, 0.3fr);
 	place-items: center;
 	gap: 26px;
+	position: sticky;
+	top: 0;
+	background-color: var(--background-color);
 }
 
 /* Nav logo */
@@ -82,7 +91,6 @@ nav button.signup {
 
 nav button:hover {
 	filter: brightness(0.85);
-	transform: translateY(-5px);
 }
 
 nav button:active {
@@ -231,7 +239,8 @@ nav button:active {
 		position: absolute;
 		padding: 16px 0;
 		opacity: 0;
-		left: 0;
+		left: -20px;
+		right: 0;
 		top: 0;
 		height: 100vh;
 		width: 80%;
@@ -264,7 +273,7 @@ nav button:active {
 		justify-items: center;
 		gap: 16px;
 	}
-	
+
 	.hero img {
 		justify-self: center;
 	}
