@@ -36,12 +36,14 @@ nav ul {
 nav ul li a {
 	text-decoration: none;
 	color: var(--primary-color);
+	opacity: 0.8;
 	font-weight: 700;
 	transition: 0.3s;
 }
 
 nav ul li a:hover {
 	color: var(--primary-color-variant);
+	opacity: 1;
 }
 
 nav ul li a::after {
@@ -80,6 +82,7 @@ nav button.signup {
 
 nav button:hover {
 	filter: brightness(0.85);
+	transform: translateY(-5px);
 }
 
 nav button:active {
