@@ -66,7 +66,7 @@ nav button {
 	color: var(--primary-color);
 	border: 1px solid var(--primary-color-variant);
 	box-shadow: 0 3px 4px black, 0 6px 0 var(--primary-color-variant);
-
+	font-family: 'Quicksand', sans-serif;
 	cursor: pointer;
 	transition: 0.3s;
 
@@ -110,14 +110,20 @@ nav button:active {
 	text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.hero h1 span {
+.hero h1 a span {
 	display: inline-block;
 	background-color: white;
 	padding: 4px;
+	color: var(--primary-color);
 	border-radius: 10px;
+	cursor: pointer;
+}
+.hero h1 a span:hover{
+	filter: brightness(0.85);
+	transition: 0.5s;
 }
 
-.hero h1 span span {
+.hero h1 a span span {
 	color: var(--secondary-color);
 }
 
@@ -150,14 +156,57 @@ nav button:active {
 }
 
 .words p span {
-	font-weight: bold;
+	font-weight: 700;
+}
+.words p span:hover{
+	opacity: 0.7;
+	transition: 0.5s;
+	cursor: pointer;
 }
 /* Statement */
 .statement.words {
 	width: 65%;
 }
 
-
+.reason {
+	width: fit-content;
+	height: fit-content;
+	/* background: blue; */
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+}
+.reason .item_box{
+	width: 22rem;
+	height: 12rem;
+	border-radius: 1rem;
+	background: white;
+	color: var(--primary-color);
+	box-shadow: 2px 2px 7px 2px rgba(0, 0, 0, 0.3);
+	margin: 10px;
+	font-size: 1.3rem;
+	font-weight: 600;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+.item_box img{
+	width: 4rem;
+	margin: 0.5rem 0;
+	height: auto;
+}
+.item_box p{
+	max-width: 70%;
+	text-align: center;
+}
+.reason .item_box:hover{
+	filter: brightness(90%);
+	/* transform: translateY(-10px); */
+	transition: 0.5s;
+}
 
 /*<============= Responsive breakpoint =============>*/
 
