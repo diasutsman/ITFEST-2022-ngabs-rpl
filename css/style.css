@@ -251,6 +251,64 @@ nav button:active {
 	animation: upDown var(--primary-duration) infinite;
 }
 
+/* Popular Class */
+.popular-class {
+	background-color: var(--light-blue);
+	border-radius: 20px;
+	padding: 20px;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	align-items: center;
+}
+
+.class-desc {
+	position: relative;
+	justify-self: center;
+}
+
+.class-desc h1 {
+	text-align: center;
+	display: inline;
+}
+
+.class-desc img {
+	/*position: absolute;*/
+	display: inline;
+}
+
+.class-list {
+	display: flex;
+	column-gap: 40px;
+	overflow-x: scroll;
+}
+
+.class-item {
+	width: min-content;
+	padding: 15px;
+	background-color: white;
+	border-radius: 20px;
+	display: flex;
+	flex-direction: column;
+	row-gap: 8px;
+}
+
+/* class-item */
+.class-item img {
+	width: 100%;
+	height: auto;
+	border-radius: 20px;
+}
+
+.class-item .price.crossed {
+	color: #94989B;
+	text-decoration: line-through;
+}
+
+.class-item .prices {
+	display: flex;
+	column-gap: 16px;
+}
+
 /*<============= Responsive breakpoint =============>*/
 
 /* Tablet Screen */
