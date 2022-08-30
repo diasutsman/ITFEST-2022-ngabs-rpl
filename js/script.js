@@ -7,7 +7,7 @@ menuBurger.addEventListener('click', e => {
 
 // Make menu closed when one of links is clicked
 nav.querySelectorAll('a').forEach(e => e.addEventListener('click', e => {
-    if(nav.classList.contains('slide'))menuBurger.firstElementChild.click()
+    if (nav.classList.contains('slide')) menuBurger.firstElementChild.click()
 }))
 
 // Make body cannot be triggered when click is inside nav
@@ -17,5 +17,5 @@ nav.parentElement.addEventListener('click', e => {
 
 // close menu when 
 document.body.addEventListener('click', e => {
-    menuBurger.firstElementChild.click()
+    nav.querySelector('a').click()
 })
