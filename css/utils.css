@@ -1,0 +1,10 @@
+/* .slide class is added when burger is clicked */
+nav ul.slide {
+	/* Show the menu */
+	opacity: 1;
+	transform: translateX(0);
+}
+
+.add-shadow {
+	box-shadow: 2px 2px 7px 2px rgb(0 0 0 / 30%);	
+}
