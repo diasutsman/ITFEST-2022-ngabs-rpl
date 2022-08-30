@@ -95,6 +95,7 @@ nav button:hover {
 
 nav button:active {
 	box-shadow: none;
+	transform: translateY(6px);
 }
 
 /* Hero */
@@ -171,11 +172,13 @@ nav button:active {
 	transition: 0.5s;
 	cursor: pointer;
 }
+
 /* Statement */
 .statement.words {
 	width: 65%;
 }
 
+/* Reasons */
 .reason {
 	width: fit-content;
 	height: fit-content;
@@ -200,6 +203,7 @@ nav button:active {
 	justify-content: center;
 	align-items: center;
 	cursor: pointer;
+	transition: 0.5s;
 }
 .item_box img{
 	width: 4rem;
@@ -213,7 +217,25 @@ nav button:active {
 .reason .item_box:hover{
 	filter: brightness(90%);
 	/* transform: translateY(-10px); */
-	transition: 0.5s;
+	animation: upDown .5s infinite;
+}
+
+.reason .item_box:hover img{
+	animation: upDown .5s infinite;
+}
+
+@keyframes upDown {
+	0% {
+		transform: translateY(0);
+	}
+
+	50% {
+		transform: translateY(-20px);
+	}
+
+	100% {
+		transform: translateY(0);
+	}
 }
 
 /*<============= Responsive breakpoint =============>*/
