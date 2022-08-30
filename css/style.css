@@ -5,20 +5,28 @@
 /* widget */
 @import url(burger.css);
 
-.container {
+.container,
+.nav-wrapper {
 	padding: 0 20px;
 	max-width: 1200px;
 	margin: auto;
 }
 
 /* Navigation */
+.nav-wrapper {
+	position: sticky;
+	top: 0;
+	max-width: none;
+	transition: box-shadow var(--primary-duration);
+}
+
 nav {
 	display: grid;
+	max-width: 1200px;
+	margin: auto;
 	grid-template-columns: auto 3fr repeat(2, 0.3fr);
 	place-items: center;
 	gap: 26px;
-	position: sticky;
-	top: 0;
 	background-color: var(--background-color);
 }
 
@@ -75,7 +83,7 @@ nav button {
 	color: var(--primary-color);
 	border: 1px solid var(--primary-color-variant);
 	box-shadow: 0 3px 4px black, 0 6px 0 var(--primary-color-variant);
-	font-family: 'Quicksand', sans-serif;
+	font-family: "Quicksand", sans-serif;
 	cursor: pointer;
 	transition: 0.3s;
 
@@ -127,7 +135,7 @@ nav button:active {
 	border-radius: 10px;
 	cursor: pointer;
 }
-.hero h1 > span:hover{
+.hero h1 > span:hover {
 	filter: brightness(0.85);
 	transition: var(--primary-duration);
 	animation-name: leftRight;
@@ -141,7 +149,7 @@ nav button:active {
 		transform: translateX(-10px);
 		text-shadow: none;
 	}
-	
+
 	to {
 		transform: translateX(10px);
 		text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
@@ -183,7 +191,7 @@ nav button:active {
 .words p span {
 	font-weight: 700;
 }
-.words p span:hover{
+.words p span:hover {
 	opacity: 0.7;
 	transition: var(--primary-duration);
 	cursor: pointer;
@@ -204,7 +212,7 @@ nav button:active {
 	justify-content: space-around;
 	align-items: center;
 }
-.reason .item_box{
+.reason .item_box {
 	width: 22rem;
 	height: 12rem;
 	border-radius: 1rem;
@@ -221,22 +229,22 @@ nav button:active {
 	cursor: pointer;
 	transition: var(--primary-duration);
 }
-.item_box img{
+.item_box img {
 	width: 4rem;
 	margin: 0.5rem 0;
 	height: auto;
 }
-.item_box p{
+.item_box p {
 	max-width: 70%;
 	text-align: center;
 }
-.reason .item_box:hover{
+.reason .item_box:hover {
 	filter: brightness(90%);
 	/* transform: translateY(-10px); */
 	animation: upDown var(--primary-duration) infinite;
 }
 
-.reason .item_box:hover img{
+.reason .item_box:hover img {
 	animation: upDown var(--primary-duration) infinite;
 }
 
@@ -330,4 +338,8 @@ nav ul.slide {
 	/* Show the menu */
 	opacity: 1;
 	transform: translateX(0);
+}
+
+.add-shadow {
+	box-shadow: 2px 2px 7px 2px rgb(0 0 0 / 30%);	
 }

@@ -19,3 +19,10 @@ nav.parentElement.addEventListener('click', e => {
 document.body.addEventListener('click', e => {
     nav.querySelector('a').click()
 })
+
+window.addEventListener('scroll', e => {
+    console.log(nav.parentElement.parentElement)
+    if (window.scrollY > 0) nav.parentElement.parentElement.classList.add('add-shadow')
+    else nav.parentElement.parentElement.classList.remove('add-shadow')
+
+})
