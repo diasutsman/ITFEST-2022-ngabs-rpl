@@ -20,6 +20,8 @@
 	top: 0;
 	max-width: none;
 	transition: box-shadow var(--primary-duration);
+	animation-name: topToBottom;
+	animation-duration: var(--primary-duration);
 }
 
 nav {
@@ -30,6 +32,7 @@ nav {
 	place-items: center;
 	gap: 26px;
 	background-color: var(--background-color);
+	
 }
 
 /* Nav logo */
@@ -93,11 +96,14 @@ nav button {
 	padding: 12px 0;
 
 	width: 80px;
+
+	animation: topToBottom var(--primary-duration)
 }
 
 nav button.signup {
 	background-color: var(--secondary-color);
 }
+
 
 nav button:hover {
 	filter: brightness(0.85);
@@ -159,6 +165,13 @@ nav button:active {
 	width: 85%;
 	justify-self: end;
 	grid-area: hero-image;
+	animation-name: rightToLeft;
+	animation-duration: var(--primary-duration);
+}
+
+.hero h1, .hero p {
+	animation-duration: var(--primary-duration);
+	animation-name: leftToRight;
 }
 
 /* Words */
