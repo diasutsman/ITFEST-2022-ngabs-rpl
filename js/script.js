@@ -1,5 +1,5 @@
 const menuBurger = document.querySelector('.menu-toggle')
-const nav = document.querySelector('nav')
+const nav = document.querySelector('nav ul')
 const classList = document.getElementById('class-list')
 
 menuBurger.addEventListener('click', e => {
