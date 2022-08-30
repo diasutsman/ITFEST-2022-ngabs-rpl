@@ -1,6 +1,5 @@
 @import url(reset.css);
 @import url(base.css);
-@import url(responsive.css);
 @import url(utils.css);
 @import url(animations.css);
 
@@ -269,6 +268,7 @@ nav button:active {
 
 /* Popular Class */
 .popular-class {
+	margin-top: 60px;
 	background-color: var(--light-blue);
 	border-radius: 20px;
 	padding: 20px;
@@ -306,6 +306,11 @@ nav button:active {
 	display: flex;
 	flex-direction: column;
 	row-gap: 8px;
+	justify-content: center;
+}
+
+.class-item > * {
+	flex: 1;
 }
 
 /* class-item */
@@ -386,6 +391,11 @@ nav button:active {
 
 	.hero img {
 		justify-self: center;
+	}
+
+	.popular-class {
+		grid-template-columns: 2fr;
+		gap: 16px;
 	}
 }
 
