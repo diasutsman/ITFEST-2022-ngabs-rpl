@@ -7,7 +7,7 @@
 
 .container {
 	padding: 0 20px;
-	max-width: 1300px;
+	max-width: 1200px;
 	margin: auto;
 }
 
@@ -315,6 +315,13 @@ nav button:active {
 
 	.hero img {
 		justify-self: center;
+	}
+}
+
+/* Mobile L */
+@media screen and (max-width: 425px) {
+	.reason .item_box {
+		width: 100%;
 	}
 }
 
