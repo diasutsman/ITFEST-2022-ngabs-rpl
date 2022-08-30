@@ -12,7 +12,7 @@
 	max-width: 1200px;
 	margin: auto;
 }
-.container{
+.container {
 	display: flex;
 	flex-direction: column;
 }
@@ -35,7 +35,6 @@ nav {
 	place-items: center;
 	gap: 26px;
 	background-color: var(--background-color);
-	
 }
 
 /* Nav logo */
@@ -100,13 +99,12 @@ nav button {
 
 	width: 80px;
 
-	animation: topToBottom var(--primary-duration)
+	animation: topToBottom var(--primary-duration);
 }
 
 nav button.signup {
 	background-color: var(--secondary-color);
 }
-
 
 nav button:hover {
 	filter: brightness(0.85);
@@ -172,14 +170,15 @@ nav button:active {
 	animation-duration: var(--primary-duration);
 }
 
-.hero h1, .hero p {
+.hero h1,
+.hero p {
 	animation-duration: var(--primary-duration);
 	animation-name: leftToRight;
 }
 
 /* Words */
 .words {
-	margin: 64px auto;
+	margin: 32px auto;
 
 	display: flex;
 	flex-direction: column;
@@ -189,6 +188,8 @@ nav button:active {
 	text-align: center;
 
 	/*background-color: #F4F8FF;*/
+	/*outline: 5px solid #F4F8FF;
+	outline-offset: 100%;*/
 }
 
 /*.statement{
@@ -322,7 +323,7 @@ nav button:active {
 }
 
 .class-item .price.crossed {
-	color: #94989B;
+	color: #94989b;
 	text-decoration: line-through;
 }
 
