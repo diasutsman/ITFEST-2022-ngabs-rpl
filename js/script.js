@@ -31,7 +31,7 @@ classes.forEach(theClass => {
     classList.innerHTML += classItem(theClass)
 })
 
-
+// Scroll with drag
 
 let pos = { top: 0, left: 0, x: 0, y: 0 };
 

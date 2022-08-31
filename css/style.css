@@ -25,6 +25,7 @@
 	transition: box-shadow var(--primary-duration);
 	animation-name: topToBottom;
 	animation-duration: var(--primary-duration);
+	z-index: 100;
 }
 
 nav {
@@ -177,6 +178,14 @@ nav button:active {
 }
 
 /* Words */
+.words-wrapper {
+	background-color: var(--light-blue);
+	border-radius: 20px;
+	margin: 20px 0;
+	animation-duration: var(--primary-duration);
+	animation-name: leftToRight;
+}
+
 .words {
 	margin: 32px auto;
 
@@ -309,6 +318,8 @@ nav button:active {
 	flex-direction: column;
 	row-gap: 8px;
 	justify-content: center;
+
+	cursor: pointer;
 }
 
 .class-item > * {
@@ -320,6 +331,7 @@ nav button:active {
 	width: 100%;
 	height: auto;
 	border-radius: 20px;
+	transition: .3s;
 }
 
 .class-item .price.crossed {
