@@ -16,9 +16,9 @@ nav.parentElement.addEventListener('click', e => {
     e.stopPropagation()
 })
 
-// close menu when 
+// close menu when click outside menu
 document.body.addEventListener('click', e => {
-    if (nav.classList.contains('slide')) nav.querySelector('a').click()
+    if (nav.classList.contains('slide')) menuBurger.firstElementChild.click()
 })
 
 window.addEventListener('scroll', e => {
