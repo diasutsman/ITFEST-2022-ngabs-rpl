@@ -183,7 +183,7 @@ nav button:active {
 	border-radius: 20px;
 	margin: 20px 0;
 	animation-duration: var(--primary-duration);
-	animation-name: leftToRight;
+	animation-name: bottomToTop;
 }
 
 .words {
