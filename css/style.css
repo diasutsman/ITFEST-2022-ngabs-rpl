@@ -331,7 +331,7 @@ nav button:active {
 	width: 100%;
 	height: auto;
 	border-radius: 20px;
-	transition: .3s;
+	transition: 0.3s;
 }
 
 .class-item .price.crossed {
@@ -344,12 +344,87 @@ nav button:active {
 	column-gap: 16px;
 }
 
+/* Interest */
+.interests {
+	padding: 32px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(3, 1fr);
+	gap: 16px;
+}
+
+.interests h2 {
+	color: var(--primary-color-variant);
+	font-weight: 700;
+	place-self: center;
+	font-size: 2em;
+	grid-column: 1/-1;
+}
+
+.interests .interest {
+	--linear-interest: linear-gradient(
+		0.93deg,
+		rgba(59, 73, 147, 0.8) 10.4%,
+		rgba(217, 217, 217, 0) 172.99%
+	);
+	min-height: 200px;
+
+	background-image: var(--linear-interest), url(../img/interest/data-analyst.png);
+	background-position: center;
+	background-size: cover;
+	color: white;
+	border-radius: 20px;
+	/*padding: 80px;*/
+	display: grid;
+	place-content: center;
+	transition: var(--primary-duration);
+}
+
+.interests .interest:hover p {
+	top: 0;
+	font-size: 1.5em;
+}
+
+.interests .interest p {
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+	width: max-content;
+	height: min-content;
+	position: relative;
+	top: 50px;
+	transition: var(--primary-duration);
+}
+
+.interests .interest:nth-child(2) {
+	background-image: var(--linear-interest), url(../img/interest/data-analyst.png);
+}
+
+.interests .interest:nth-child(3) {
+	background-image: var(--linear-interest), url(../img/interest/web-developer.png);
+}
+
+.interests .interest:nth-child(4) {
+	background-image: var(--linear-interest), url(../img/interest/mobile-developer.png);
+}
+
+.interests .interest:nth-child(5) {
+	background-image: var(--linear-interest), url(../img/interest/iot.png);
+}
+
+/*.interests .interest:hover {
+	background-size: 110%;
+}*/
+
 /*<============= Responsive breakpoint =============>*/
 
 /* Tablet Screen */
 @media screen and (max-width: 800px) {
 	nav ul a {
 		font-size: 0.75em;
+	}
+	.interests {
+		grid-template-columns: repeat(2, 1fr);
 	}
 }
 
@@ -410,6 +485,10 @@ nav button:active {
 	.popular-class {
 		grid-template-columns: 2fr;
 		gap: 16px;
+	}
+
+	.interests {
+		grid-template-columns: repeat(1, 1fr);
 	}
 }
 
