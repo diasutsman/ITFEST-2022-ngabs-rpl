@@ -195,16 +195,13 @@ nav button:active {
 	row-gap: 16px;
 	width: 60%;
 	text-align: center;
-<<<<<<< HEAD
 	height: 13rem;
 	background-color: #F4F8FF;
 	padding: 0 10rem;
-=======
 
 	/*background-color: #F4F8FF;*/
 	/*outline: 5px solid #F4F8FF;
 	outline-offset: 100%;*/
->>>>>>> de7a203ceb27d2abc032786d5a994eaada19dbb8
 }
 
 /*.statement{
