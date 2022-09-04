@@ -415,6 +415,14 @@ nav button:active {
 	background-image: var(--linear-interest), url(../img/interest/iot.png);
 }
 
+.interests .interest:nth-child(6) {
+	background-image: var(--linear-interest), url(../img/interest/ui_ux.jpg);
+}
+
+.interests .interest:nth-child(7) {
+	background-image: var(--linear-interest), url(../img/interest/javascript.jpg);
+}
+
 /*.interests .interest:hover {
 	background-size: 110%;
 }*/
