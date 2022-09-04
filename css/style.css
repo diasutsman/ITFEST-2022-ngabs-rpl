@@ -378,6 +378,7 @@ nav button:active {
 	display: grid;
 	place-content: center;
 	transition: var(--primary-duration);
+	cursor: pointer;
 }
 
 .interests .interest:hover p {
