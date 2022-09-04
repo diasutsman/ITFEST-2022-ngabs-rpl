@@ -294,8 +294,9 @@ nav button:active {
 }
 
 .class-desc h1 {
+	font-size: 32px;
 	text-align: center;
-	display: inline;
+	color: var(--primary-color-variant);
 }
 
 .class-desc img {
