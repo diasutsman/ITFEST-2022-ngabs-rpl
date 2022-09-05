@@ -307,7 +307,6 @@ nav button:active {
 	display: flex;
 	column-gap: 40px;
 	overflow-x: scroll;
-	scroll-behavior: smooth;
 }
 
 .class-list::-webkit-scrollbar {
@@ -380,7 +379,6 @@ nav button:active {
 	background-size: cover;
 	color: white;
 	border-radius: 20px;
-	/*padding: 80px;*/
 	display: grid;
 	place-content: center;
 	transition: var(--primary-duration);
@@ -426,10 +424,6 @@ nav button:active {
 .interests .interest:nth-child(7) {
 	background-image: var(--linear-interest), url(../img/interest/javascript.webp);
 }
-
-/*.interests .interest:hover {
-	background-size: 110%;
-}*/
 
 /*<============= Responsive breakpoint =============>*/
 
