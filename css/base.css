@@ -16,6 +16,11 @@
   box-sizing: border-box;
 }
 
+html, body { 
+	scroll-behavior: smooth;
+	scroll-padding-top: 101px;
+}
+
 body {
 	font-family: "Quicksand", sans-serif;
 	background-color: var(--background-color);
