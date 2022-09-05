@@ -15,21 +15,21 @@ class TheClass {
 
 let classes = [
     new TheClass(
-        'img/classes-img/class-1.png',
+        'img/classes-img/class-1.webp',
         'Web developer from zero to hero',
         4,
         75000,
         100000
     ),
     new TheClass(
-        'img/classes-img/class-2.png',
+        'img/classes-img/class-2.webp',
         'Belajar UI/UX Design',
         3,
         75000,
         100000
     ),
     new TheClass(
-        'img/classes-img/class-3.png',
+        'img/classes-img/class-3.webp',
         'Mobile Developer Pemula sampai Mahir',
         5,
         75000,
