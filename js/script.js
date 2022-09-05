@@ -33,44 +33,61 @@ classes.forEach(theClass => {
 
 // Scroll with drag
 
-let pos = { top: 0, left: 0, x: 0, y: 0 };
+function dragScroll(e) {
+    let pos = { top: 0, left: 0, x: 0, y: 0 };
 
-const mouseDownHandler = function (e) {
-    pos = {
-        // The current scroll
-        left: classList.scrollLeft,
-        top: classList.scrollTop,
-        // Get the current mouse position
-        x: e.clientX,
-        y: e.clientY,
+    const mouseDownHandler = function (e) {
+        pos = {
+            // The current scroll
+            left: classList.scrollLeft,
+            top: classList.scrollTop,
+            // Get the current mouse position
+            x: e.clientX,
+            y: e.clientY,
+        };
+
+        document.addEventListener('mousemove', mouseMoveHandler);
+        document.addEventListener('mouseup', mouseUpHandler);
     };
 
-    document.addEventListener('mousemove', mouseMoveHandler);
-    document.addEventListener('mouseup', mouseUpHandler);
-};
-
-const mouseMoveHandler = function (e) {
+    const mouseMoveHandler = function (e) {
 
 
-    // How far the mouse has been moved
-    const dx = e.clientX - pos.x;
-    const dy = e.clientY - pos.y;
+        // How far the mouse has been moved
+        const dx = e.clientX - pos.x;
+        const dy = e.clientY - pos.y;
 
-    // Change the cursor and prevent user from selecting the text
-    //classList.style.cursor = 'grabbing';
-    classList.style.userSelect = 'none';
+        // Change the cursor and prevent user from selecting the text
+        //classList.style.cursor = 'grabbing';
+        classList.style.userSelect = 'none';
 
-    // Scroll the element
-    classList.scrollTop = pos.top - dy;
-    classList.scrollLeft = pos.left - dx;
-};
+        // Scroll the element
+        classList.scrollTop = pos.top - dy;
+        classList.scrollLeft = pos.left - dx;
+    };
 
-const mouseUpHandler = function () {
-    document.removeEventListener('mousemove', mouseMoveHandler);
-    document.removeEventListener('mouseup', mouseUpHandler);
+    const mouseUpHandler = function () {
+        document.removeEventListener('mousemove', mouseMoveHandler);
+        document.removeEventListener('mouseup', mouseUpHandler);
 
-    //classList.style.cursor = 'grab';
-    classList.style.removeProperty('user-select');
-};
+        //classList.style.cursor = 'grab';
+        classList.style.removeProperty('user-select');
+    };
 
-classList.addEventListener('mousedown', mouseDownHandler)
+    classList.addEventListener('mousedown', mouseDownHandler)
+}
+
+// Auto scroll Class List
+function autoScrollClassList() {
+    let velocity = 50
+    const maxLeftScroll = classList.scrollWidth - classList.clientWidth
+    console.log(maxLeftScroll)
+    setInterval(() => {
+        console.log(classList.scrollLeft)
+        classList.scrollLeft += velocity
+        if (classList.scrollLeft > maxLeftScroll) velocity = -velocity
+    }, 100)
+}
+
+dragScroll()
+//autoScrollClassList()
