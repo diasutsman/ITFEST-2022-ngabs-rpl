@@ -155,7 +155,7 @@ nav button:active {
 }
 
 .hero h1 span span {
-	color: var(--secondary-color);
+	color: #91701b;
 }
 
 .hero p {
@@ -340,7 +340,7 @@ nav button:active {
 }
 
 .class-item .price.crossed {
-	color: #94989b;
+	color: #56595a;
 	text-decoration: line-through;
 }
 

@@ -89,5 +89,13 @@ function autoScrollClassList() {
     }, 100)
 }
 
+
+function addAltsToImg() {
+    document.querySelectorAll('img').forEach(img => {
+        if (!img.alt) img.alt = img.src.split('/').pop().split('.').shift()
+    })
+}
+
 dragScroll()
+addAltsToImg()
 //autoScrollClassList()
