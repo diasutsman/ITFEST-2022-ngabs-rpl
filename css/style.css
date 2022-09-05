@@ -195,7 +195,23 @@ nav button:active {
 	row-gap: 16px;
 	width: 60%;
 	text-align: center;
+
+	/*background-color: #F4F8FF;*/
+	/*outline: 5px solid #F4F8FF;
+	outline-offset: 100%;*/
 }
+
+/*.statement{
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+	margin: 0 0 1.5rem 0;
+}
+
+.question{
+	margin: 1.5rem 0 0 0;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}*/
 
 .words h2 {
 	font-size: 2.5em;
@@ -402,6 +418,18 @@ nav button:active {
 .interests .interest:nth-child(5) {
 	background-image: var(--linear-interest), url(../img/interest/iot.png);
 }
+
+.interests .interest:nth-child(6) {
+	background-image: var(--linear-interest), url(../img/interest/ui_ux.jpg);
+}
+
+.interests .interest:nth-child(7) {
+	background-image: var(--linear-interest), url(../img/interest/javascript.jpg);
+}
+
+/*.interests .interest:hover {
+	background-size: 110%;
+}*/
 
 /*<============= Responsive breakpoint =============>*/
 
