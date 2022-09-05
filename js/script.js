@@ -45,8 +45,6 @@ const mouseDownHandler = function (e) {
         y: e.clientY,
     };
 
-    console.log(pos.left, pos.x)
-
     document.addEventListener('mousemove', mouseMoveHandler);
     document.addEventListener('mouseup', mouseUpHandler);
 };
