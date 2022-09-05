@@ -85,7 +85,7 @@ function autoScrollClassList() {
     setInterval(() => {
         console.log(classList.scrollLeft)
         classList.scrollLeft += velocity
-        if (classList.scrollLeft > maxLeftScroll) velocity = -velocity
+        if (classList.scrollLeft > maxLeftScroll || classList.scrollLeft <= 0) velocity = -velocity
     }, 100)
 }
 
