@@ -144,10 +144,8 @@ nav button:active {
 	padding: 4px;
 	color: var(--primary-color);
 	border-radius: 10px;
-	animation-name: leftRight;
-	animation-duration: var(--primary-duration);
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
+	overflow: hidden;
+	animation: leftRight var(--primary-duration) infinite alternate;
 }
 
 .hero h1 span span {
@@ -325,6 +323,7 @@ nav button:active {
 
 .class-item > * {
 	flex: 1;
+	transition: var(--primary-duration);
 }
 
 /* class-item */
