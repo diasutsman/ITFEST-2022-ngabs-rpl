@@ -26,16 +26,17 @@
 	animation-name: topToBottom;
 	animation-duration: var(--primary-duration);
 	z-index: 100;
+	background-color: var(--background-color);
 }
 
 nav {
 	display: grid;
+	min-height: 75px;
 	max-width: 1200px;
 	margin: auto;
 	grid-template-columns: auto 3fr repeat(2, 0.3fr);
 	place-items: center;
 	gap: 26px;
-	background-color: var(--background-color);
 }
 
 /* Nav logo */
@@ -181,7 +182,7 @@ nav button:active {
 .words-wrapper {
 	background-color: var(--light-blue);
 	border-radius: 20px;
-	margin: 20px 0;
+	margin: 64px 0;
 	animation-duration: var(--primary-duration);
 	animation-name: bottomToTop;
 }
@@ -307,6 +308,7 @@ nav button:active {
 	display: flex;
 	column-gap: 40px;
 	overflow-x: scroll;
+	overflow-y: visible;
 }
 
 .class-list::-webkit-scrollbar {
@@ -324,6 +326,7 @@ nav button:active {
 	justify-content: center;
 
 	cursor: pointer;
+	transition: var(--primary-duration);
 }
 
 .class-item > * {

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Meta Tags for SEO -->
+  <meta name="title" content="Ngabs Coding">
+  <meta name="description" content="A site about learning coding in bahasa">
+  <meta name="keywords" content="coding, ngabs coding, ngoding, code, coders">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="language" content="English">
+  <meta name="revisit-after" content="1 days">
+  <meta name="author" content="Ngabs RPL">
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css">
+  <link rel="shortcut icon" href="../img/ng.svg" type="image/x-icon">
+  <title>Detail</title>
+</head>
+
+<body>
+  <div class="nav-wrapper">
+    <nav id="nav">
+      <button class="login" id="back">&lBarr; Back</button>
+      <a href="/" class="logo-btn"><img src="../img/logo.svg" alt=""></a>
+    </nav>
+  </div>
+
+  <div class="container">
+    <!-- Idea: just make it grid -->
+    <h1 id="title">Ini Detail</h1>
+    <img id="img" src="" alt="">
+  </div>
+
+
+  <script src="../js/script.js"></script>
+  <script>
+    const title = document.getElementById('title');
+    const img = document.getElementById('img');
+    const back = document.getElementById('back')
+
+    back.addEventListener('click', () => {
+      history.back()
+      //window.location.href = window.location.origin
+    })
+
+    const url = new URL(location.href)
+
+    const titleString = url.searchParams.get('title')
+    title.innerText = titleString
+    document.title = titleString
+    img.src = '../' + url.searchParams.get('img')
+    //console.log(new URL(location.href).searchParams.get('img'));
+  </script>
+</body>
+
+</html>

@@ -8,3 +8,15 @@ nav ul.slide {
 .add-shadow {
 	box-shadow: 2px 2px 7px 2px rgb(0 0 0 / 30%);	
 }
+
+.reveal{
+  position: relative;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.reveal.active{
+  transform: translateX(0);
+  opacity: 1;
+}

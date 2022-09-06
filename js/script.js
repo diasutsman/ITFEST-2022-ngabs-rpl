@@ -1,18 +1,26 @@
 const menuBurger = document.querySelector('.menu-toggle')
 const nav = document.querySelector('nav ul')
+const navWrapper = document.querySelector('.nav-wrapper')
 const classList = document.getElementById('class-list')
 
-menuBurger.addEventListener('click', e => {
+if (classList) {
+    classes.forEach(theClass => {
+        classList.appendChild(classItem(theClass))
+    })
+    dragScroll()
+}
+
+menuBurger?.addEventListener('click', e => {
     nav.classList.toggle('slide')
 })
 
 // Make menu closed when one of links is clicked
-nav.querySelectorAll('a').forEach(e => e.addEventListener('click', e => {
+nav?.querySelectorAll('a').forEach(e => e.addEventListener('click', e => {
     if (nav.classList.contains('slide')) menuBurger.firstElementChild.click()
 }))
 
 // Make body cannot be triggered when click is inside nav
-nav.parentElement.addEventListener('click', e => {
+navWrapper.firstElementChild.addEventListener('click', e => {
     e.stopPropagation()
 })
 
@@ -22,13 +30,9 @@ document.body.addEventListener('click', e => {
 })
 
 window.addEventListener('scroll', e => {
-    if (window.scrollY > 0) nav.parentElement.parentElement.classList.add('add-shadow')
-    else nav.parentElement.parentElement.classList.remove('add-shadow')
+    if (window.scrollY > 0) navWrapper.classList.add('add-shadow')
+    else navWrapper.classList.remove('add-shadow')
 
-})
-
-classes.forEach(theClass => {
-    classList.innerHTML += classItem(theClass)
 })
 
 // Scroll with drag
@@ -78,15 +82,23 @@ function dragScroll(e) {
 }
 
 // Auto scroll Class List
-function autoScrollClassList() {
-    let velocity = 50
-    const maxLeftScroll = classList.scrollWidth - classList.clientWidth
-    console.log(maxLeftScroll)
-    setInterval(() => {
-        console.log(classList.scrollLeft)
-        classList.scrollLeft += velocity
-        if (classList.scrollLeft > maxLeftScroll || classList.scrollLeft <= 0) velocity = -velocity
-    }, 100)
+function scrollReveal() {
+    window.addEventListener('scroll', () => {
+        var reveals = document.querySelectorAll(".reveal");
+
+        for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var elementTop = reveals[i].getBoundingClientRect().top;
+            var elementVisible = 150;
+            console.log()
+
+            if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add("active");
+            } else {
+                reveals[i].classList.remove("active");
+            }
+        }
+    })
 }
 
 
@@ -95,7 +107,5 @@ function addAltsToImg() {
         if (!img.alt) img.alt = img.src.split('/').pop().split('.').shift()
     })
 }
-
-dragScroll()
 addAltsToImg()
-//autoScrollClassList()
+scrollReveal()
