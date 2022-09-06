@@ -163,8 +163,7 @@ nav button:active {
 	width: 85%;
 	justify-self: end;
 	grid-area: hero-image;
-	animation-name: rightToLeft;
-	animation-duration: var(--primary-duration);
+	animation: rightToLeft var(--primary-duration), zoomIn var(--primary-duration) var(--primary-duration) infinite alternate;
 }
 
 .hero h1,
