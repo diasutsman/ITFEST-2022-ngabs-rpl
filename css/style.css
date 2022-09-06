@@ -138,17 +138,12 @@ nav button:active {
 	text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.hero h1 span {
+.hero h1 > span {
 	display: inline-block;
 	background-color: white;
 	padding: 4px;
 	color: var(--primary-color);
 	border-radius: 10px;
-	cursor: pointer;
-}
-.hero h1 > span:hover {
-	filter: brightness(0.85);
-	transition: var(--primary-duration);
 	animation-name: leftRight;
 	animation-duration: var(--primary-duration);
 	animation-iteration-count: infinite;
@@ -156,7 +151,7 @@ nav button:active {
 }
 
 .hero h1 span span {
-	color: #91701b;
+	color: var(--secondary-color);
 }
 
 .hero p {
@@ -183,8 +178,8 @@ nav button:active {
 	background-color: var(--light-blue);
 	border-radius: 20px;
 	margin: 64px 0;
-	animation-duration: var(--primary-duration);
-	animation-name: bottomToTop;
+	/*animation-duration: var(--primary-duration);
+	animation-name: bottomToTop;*/
 }
 
 .words {
