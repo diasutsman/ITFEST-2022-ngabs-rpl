@@ -376,10 +376,30 @@ nav button:active {
 	background-size: cover;
 	color: white;
 	border-radius: 20px;
-	display: grid;
-	place-content: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	row-gap: 16px;
 	transition: var(--primary-duration);
 	cursor: pointer;
+	position: relative;
+}
+
+.interests .interest::before {
+	content: '';
+	position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+	background: linear-gradient(0.93deg, rgba(59, 73, 147, 0.8) 64.87%, rgba(217, 217, 217, 0) 172.99%);
+	transition: var(--primary-duration);
+	border-radius: 20px;
+}
+
+.interests .interest:hover::before {
+	height: 100%;
 }
 
 .interests .interest:hover p {
@@ -396,6 +416,18 @@ nav button:active {
 	position: relative;
 	top: 50px;
 	transition: var(--primary-duration);
+}
+
+.interests .interest p.desc {
+	font-size: 14px;
+	width: 75%;
+	display: none;
+	transition: var(--primary-duration);
+}
+
+.interests .interest:hover p.desc {
+	display: block;
+	animation: appear var(--primary-duration);
 }
 
 .interests .interest:nth-child(2) {
