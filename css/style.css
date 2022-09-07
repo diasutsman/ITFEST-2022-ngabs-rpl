@@ -521,6 +521,49 @@ nav button:active {
 	align-self: flex-end;
 }
 
+/* Engagement */
+.engagement {
+	margin-top: 74px;
+
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	background-color: white;
+	border-radius: 20px;
+	align-items: center;
+
+	row-gap: 12px;
+	color: var(--primary-color-variant);
+	padding: 32px;
+}
+
+.engagement h1,
+.engagement p {
+	text-align: center;
+}
+
+.engagement h1 {
+	font-weight: 600;
+	font-size: 48px;
+}
+
+.engagement p {
+	font-weight: 400;
+	font-size: 28px;
+}
+
+.engagement button.make-account {
+	width: fit-content;
+	margin-top: 32px;
+	padding: 20px 32px;
+	color: inherit;
+	background: #ffc634;
+	border-radius: 10px;
+	font-weight: 700;
+	font-size: 20px;
+	cursor: pointer;
+}
+
 /*<============= Responsive breakpoint =============>*/
 
 /* Tablet Screen */
