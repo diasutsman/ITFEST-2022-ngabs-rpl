@@ -349,7 +349,7 @@ nav button:active {
 .interests {
 	padding: 32px;
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	grid-template-rows: repeat(3, 1fr);
 	gap: 16px;
 }
@@ -465,8 +465,8 @@ nav button:active {
 /* Testimonials */
 .testimonials {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	column-gap: 32px;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 32px;
 }
 
 .testimonials h2 {
@@ -523,7 +523,7 @@ nav button:active {
 
 /* Engagement */
 .engagement {
-	margin-top: 74px;
+	margin: 74px 0;
 
 	width: 100%;
 	display: flex;
@@ -564,6 +564,31 @@ nav button:active {
 	cursor: pointer;
 }
 
+/* Footer */
+.footer-wrapper {
+	width: 100%;
+	background-color: var(--primary-color-variant);
+	padding: 32px;
+}
+
+footer {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	row-gap: 16px;
+}
+
+footer h3 {
+	font-size: 45px;
+	background-color: white;
+	padding: 20px;
+	display: inline-block;
+	border-radius: 10px;
+	color: var(--primary-color-variant);
+}
+
+footer h3 > span {
+	color: var(--secondary-color);
+}
 /*<============= Responsive breakpoint =============>*/
 
 /* Tablet Screen */
@@ -572,7 +597,8 @@ nav button:active {
 		font-size: 0.75em;
 	}
 	.interests {
-		grid-template-columns: repeat(2, 1fr);
+		/*grid-template-columns: repeat(2, 1fr);*/
+		padding: 0;
 	}
 
 	.testimonial {
@@ -656,7 +682,7 @@ nav button:active {
 	}
 
 	.interests {
-		grid-template-columns: repeat(1, 1fr);
+		/*grid-template-columns: repeat(1, 1fr);*/
 	}
 
 	.testimonial {
