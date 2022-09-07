@@ -45,6 +45,10 @@ nav a {
 	height: auto;
 }
 
+nav a img {
+	height: 75px;
+}
+
 /* nav lists */
 nav ul {
 	list-style-type: none;
@@ -568,13 +572,16 @@ nav button:active {
 .footer-wrapper {
 	width: 100%;
 	background-color: var(--primary-color-variant);
-	padding: 32px;
 }
 
 footer {
+	padding: 32px 16px;
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	row-gap: 16px;
+	margin: auto;
+	max-width: 1200px;
+	gap: 237px;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	row-gap: 64px;
 }
 
 footer h3 {
@@ -584,10 +591,53 @@ footer h3 {
 	display: inline-block;
 	border-radius: 10px;
 	color: var(--primary-color-variant);
+	margin-bottom: 15px;
 }
 
 footer h3 > span {
 	color: var(--secondary-color);
+}
+
+footer p.text {
+	font-weight: 500;
+	font-size: 28px;
+	color: white;
+	margin-bottom: 19px;
+}
+
+footer button {
+	background-color: var(--secondary-color);
+	padding: 8px;
+	color: var(--primary-color-variant);
+	border-radius: 10px;
+}
+
+footer .div-2 .links {
+	display: grid;
+	padding-bottom: 60px;
+	gap: 16px;
+	border-bottom: white solid 1px;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+footer .div-2 a {
+	color: white;
+	text-decoration: none;
+}
+
+footer .socials {
+	display: flex;
+	margin-top: 28px;
+	justify-content: flex-end;
+	gap: 16px;
+}
+
+footer p.copyright {
+	font-weight: 600;
+	font-size: 16px;
+	color: white;
+	text-align: center;
+	grid-column: 1/-1;
 }
 /*<============= Responsive breakpoint =============>*/
 
@@ -679,10 +729,6 @@ footer h3 > span {
 	.popular-class {
 		grid-template-columns: 2fr;
 		gap: 16px;
-	}
-
-	.interests {
-		/*grid-template-columns: repeat(1, 1fr);*/
 	}
 
 	.testimonial {
