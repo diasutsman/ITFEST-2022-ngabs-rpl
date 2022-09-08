@@ -29,7 +29,7 @@ function toDetail(theClass) {
  */
 function classItem(theClass) {
   const parent = document.createElement('div')
-  parent.innerHTML = `<div class="class-item">
+  parent.innerHTML = `<div class="class-item" title="Click to see detail">
   <img src="${theClass.img}" alt="Class image" draggable="false">
     <p>${theClass.title}</p>
     <!-- Stars image -->

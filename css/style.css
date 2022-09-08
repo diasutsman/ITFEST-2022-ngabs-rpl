@@ -232,22 +232,22 @@ nav button:active {
 
 /* Reasons */
 .reason {
-	width: fit-content;
 	height: fit-content;
 	/* background: blue; */
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
+	display: grid;
+	/*flex-wrap: wrap;*/
+	gap: 32px;
+	/*justify-content: space-around;*/
 	align-items: center;
+	grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
 }
+
 .reason .item_box {
-	width: 22rem;
 	height: 12rem;
 	border-radius: 1rem;
 	background: white;
 	color: var(--primary-color);
 	box-shadow: 2px 2px 7px 2px rgba(0, 0, 0, 0.3);
-	margin: 10px;
 	font-size: 1.3rem;
 	font-weight: 600;
 	display: flex;
@@ -742,7 +742,7 @@ footer p.copyright {
 
 /* Mobile L */
 @media screen and (max-width: 425px) {
-	.reason .item_box {
-		width: 100%;
+	.reason {
+		grid-template-columns: auto;
 	}
 }
