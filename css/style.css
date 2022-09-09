@@ -171,6 +171,7 @@ nav button:active {
 
 .hero img {
 	width: 85%;
+	cursor: pointer;
 	justify-self: end;
 	grid-area: hero-image;
 	animation: rightToLeft var(--primary-duration);
@@ -302,7 +303,7 @@ nav button:active {
 	display: none;
 }
 
-a:has(.class-item) {
+.popular-class a {
 	text-decoration: none;
 	color: inherit;
 }
@@ -317,7 +318,8 @@ a:has(.class-item) {
 	flex-direction: column;
 	row-gap: 8px;
 	justify-content: center;
-
+	text-decoration: none;
+	color: inherit;
 	cursor: pointer;
 	transition: var(--primary-duration);
 }
@@ -494,7 +496,7 @@ a:has(.class-item) {
 
 h2.testi-title {
 	font-weight: 700;
-	font-size: 64px;
+	font-size: 32px;
 	text-align: center;
 	color: var(--primary-color-variant);
 	margin: 53px;
