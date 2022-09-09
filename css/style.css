@@ -321,7 +321,6 @@ nav button:active {
 	text-decoration: none;
 	color: inherit;
 	cursor: pointer;
-	transition: var(--primary-duration);
 }
 
 .class-item > * {
