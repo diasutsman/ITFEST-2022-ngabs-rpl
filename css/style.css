@@ -23,10 +23,11 @@
 	top: 0;
 	max-width: none;
 	transition: box-shadow var(--primary-duration);
+	background-color: var(--background-color);
+	z-index: 100;
 	animation-name: topToBottom;
 	animation-duration: var(--primary-duration);
-	z-index: 100;
-	background-color: var(--background-color);
+	animation-timing-function: ease;
 }
 
 nav {
@@ -149,7 +150,14 @@ nav button:active {
 	color: var(--primary-color);
 	border-radius: 10px;
 	overflow: hidden;
-	animation: leftRight var(--primary-duration) infinite alternate;
+	transition: all var(--primary-duration);
+}
+
+.hero h1 > span:hover {
+	background-color: var(--primary-color);
+	color: white;
+	transform: scale(1.1);
+	cursor: pointer;
 }
 
 .hero h1 span span {
@@ -165,14 +173,15 @@ nav button:active {
 	width: 85%;
 	justify-self: end;
 	grid-area: hero-image;
-	animation: rightToLeft var(--primary-duration),
-		zoomIn var(--primary-duration) var(--primary-duration) infinite alternate;
+	animation: rightToLeft var(--primary-duration);
+	animation-timing-function: ease;
 }
 
 .hero h1,
 .hero p {
 	animation-duration: var(--primary-duration);
 	animation-name: leftToRight;
+	animation-timing-function: ease;
 }
 
 /* Words */
@@ -180,36 +189,17 @@ nav button:active {
 	background-color: var(--light-blue);
 	border-radius: 20px;
 	margin: 64px 0;
-	/*animation-duration: var(--primary-duration);
-	animation-name: bottomToTop;*/
 }
 
 .words {
 	margin: 32px auto;
-
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	row-gap: 16px;
 	width: 60%;
 	text-align: center;
-
-	/*background-color: #F4F8FF;*/
-	/*outline: 5px solid #F4F8FF;
-	outline-offset: 100%;*/
 }
-
-/*.statement{
-	border-bottom-left-radius: 10px;
-	border-bottom-right-radius: 10px;
-	margin: 0 0 1.5rem 0;
-}
-
-.question{
-	margin: 1.5rem 0 0 0;
-	border-top-left-radius: 10px;
-	border-top-right-radius: 10px;
-}*/
 
 .words h2 {
 	font-size: 2.5em;
@@ -267,13 +257,13 @@ nav button:active {
 	text-align: center;
 }
 .reason .item_box:hover {
+	position: relative;
 	filter: brightness(90%);
-	/* transform: translateY(-10px); */
-	animation: upDown var(--primary-duration) infinite;
+	transform: translateY(-10px);
 }
 
 .reason .item_box:hover img {
-	animation: upDown var(--primary-duration) infinite;
+	animation: upDown var(--primary-duration);
 }
 
 /* Popular Class */
@@ -500,6 +490,12 @@ a:has(.class-item) {
 	align-items: flex-start;
 	padding: 8px;
 	border-radius: 15px;
+	cursor: pointer;
+}
+
+.testimonial:hover {
+	transform: scale(1.1);
+	transition-timing-function: ease-out;
 }
 
 .testimonial img.student {
