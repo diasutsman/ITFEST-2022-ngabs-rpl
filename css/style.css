@@ -53,10 +53,6 @@ nav a img {
 /* nav lists */
 nav ul {
 	list-style-type: none;
-	/*display: grid;*/
-	/*place-items: center;
-	place-self: center stretch;
-	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));*/
 	place-self: center stretch;
 	display: flex;
 	justify-content: start;
@@ -100,12 +96,9 @@ nav button {
 	font-family: "Quicksand", sans-serif;
 	cursor: pointer;
 	transition: 0.3s;
-
 	place-self: center stretch;
 	padding: 12px 0;
-
 	width: 80px;
-
 	animation: topToBottom var(--primary-duration);
 }
 
@@ -123,7 +116,6 @@ nav button:active {
 }
 
 /* Hero */
-
 .hero {
 	display: grid;
 	grid-template-areas:
@@ -248,15 +240,18 @@ nav button:active {
 	cursor: pointer;
 	transition: var(--primary-duration);
 }
+
 .item_box img {
 	width: 4rem;
 	margin: 0.5rem 0;
 	height: auto;
 }
+
 .item_box p {
 	max-width: 70%;
 	text-align: center;
 }
+
 .reason .item_box:hover {
 	position: relative;
 	filter: brightness(90%);
@@ -371,7 +366,6 @@ nav button:active {
 		rgba(217, 217, 217, 0) 172.99%
 	);
 	min-height: 200px;
-
 	background-image: var(--linear-interest),
 		url(../img/interest/data-analyst.png);
 	background-position: center;
@@ -563,6 +557,8 @@ h2.testi-title {
 		opacity: 1;
 	}
 }
+
+/* ENDS Fading animation */
 
 .testimonial img.student {
 	width: 100%;

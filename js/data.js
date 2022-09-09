@@ -8,11 +8,12 @@ class TheClass {
      * @param {number} crossedPrice 
      */
     constructor(img, title, stars, price, crossedPrice) {
-        Object.assign(this, { title, img, stars, price: price.toRupiahFormat(), crossedPrice: crossedPrice.toRupiahFormat() })
         // assign all parameter
+        Object.assign(this, { title, img, stars, price: price.toRupiahFormat(), crossedPrice: crossedPrice.toRupiahFormat() })
     }
 }
 
+// Array of dummy data
 let classes = [
     new TheClass(
         'img/classes-img/class-1.webp',

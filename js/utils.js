@@ -1,7 +1,9 @@
+// To camel case extension function on string object
 String.prototype.toCamelCase = function () {
   return this.replace(/[-_]\w/g, e => e.slice(-1).toUpperCase())
 }
 
+// To rupiah format extension function on number object
 Number.prototype.toRupiahFormat = function () {
   return this.toLocaleString('id-ID', {
     style: 'currency',
@@ -9,11 +11,7 @@ Number.prototype.toRupiahFormat = function () {
   })
 }
 
-/**
- * 
- * @param {TheClass} theClass 
- * @returns
- */
+// Function to create class card element in form of string
 function classItem(theClass) {
   const url = new URL(window.location.href.slice(0, window.location.href.lastIndexOf('/') + 1) + 'pages/detail.html')
   url.search = `?${Object.entries(theClass).map(([key, value]) => `${key}=${value}`).join('&')}`

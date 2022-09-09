@@ -1,3 +1,4 @@
+// DECLARATION
 const menuBurger = document.querySelector('.menu-toggle')
 const nav = document.querySelector('nav ul')
 const navWrapper = document.querySelector('.nav-wrapper')
@@ -29,6 +30,7 @@ document.body.addEventListener('click', e => {
     if (nav.classList.contains('slide')) menuBurger.firstElementChild.click()
 })
 
+// Add shadow to header when scroll
 window.addEventListener('scroll', e => {
     if (window.scrollY > 0) navWrapper.classList.add('add-shadow')
     else navWrapper.classList.remove('add-shadow')
@@ -36,7 +38,6 @@ window.addEventListener('scroll', e => {
 })
 
 // Scroll with drag
-
 function dragScroll(e) {
     let pos = { top: 0, left: 0, x: 0, y: 0 };
 
@@ -62,7 +63,6 @@ function dragScroll(e) {
         const dy = e.clientY - pos.y;
 
         // Change the cursor and prevent user from selecting the text
-        //classList.style.cursor = 'grabbing';
         classList.style.userSelect = 'none';
 
         // Scroll the element
@@ -81,7 +81,7 @@ function dragScroll(e) {
     classList.addEventListener('mousedown', mouseDownHandler)
 }
 
-// Auto scroll Class List
+// Scroll Reveal animation
 function scrollReveal() {
     window.addEventListener('scroll', () => {
         var reveals = document.querySelectorAll(".reveal");
@@ -99,16 +99,14 @@ function scrollReveal() {
     })
 }
 
-
+// Add alts to images
 function addAltsToImg() {
     document.querySelectorAll('img').forEach(img => {
         if (!img.alt) img.alt = img.src.split('/').pop().split('.').shift()
     })
 }
-addAltsToImg()
-scrollReveal()
 
-// testimonials slider
+// Testimonials slider
 function testimonialsSlider() {
     let slideIndex = 1;
     let slides = document.getElementsByClassName("testimonial");
@@ -203,8 +201,11 @@ function makeElementTiltable(element) {
     }
 }
 
+// Invoke all functions and catch errors if any then do nothing
 try {
+    addAltsToImg()
+    scrollReveal()
     makeElementTiltable(document.querySelector(".hero > img"))
     makeElementTiltable(document.querySelector(".hero h1 > span"))
     testimonialsSlider()
-}catch(e) {}
+} catch (e) { }
