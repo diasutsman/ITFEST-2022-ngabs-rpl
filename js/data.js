@@ -8,7 +8,7 @@ class TheClass {
      * @param {number} crossedPrice 
      */
     constructor(img, title, stars, price, crossedPrice) {
-        Object.assign(this, { img, title, stars, price: price.toRupiahFormat(), crossedPrice: crossedPrice.toRupiahFormat() })
+        Object.assign(this, { title, img, stars, price: price.toRupiahFormat(), crossedPrice: crossedPrice.toRupiahFormat() })
         // assign all parameter
     }
 }

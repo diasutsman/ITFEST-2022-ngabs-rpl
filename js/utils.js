@@ -14,22 +14,11 @@ Number.prototype.toRupiahFormat = function () {
  * @param {TheClass} theClass 
  * @returns
  */
-function toDetail(theClass) {
-  console.log(theClass)
+function classItem(theClass) {
   const url = new URL(window.location.href.slice(0, window.location.href.lastIndexOf('/') + 1) + 'pages/detail.html')
   url.search = `?${Object.entries(theClass).map(([key, value]) => `${key}=${value}`).join('&')}`
-  //console.log(url.href)
-  location.href = url.href
-}
-
-/**
- * 
- * @param {TheClass} theClass 
- * @returns
- */
-function classItem(theClass) {
-  const parent = document.createElement('div')
-  parent.innerHTML = `<div class="class-item" title="Click to see detail">
+  return `<a draggable="false" href="${url.href}">
+  <div class="class-item" title="Click to see detail">
   <img src="${theClass.img}" alt="Class image" draggable="false">
     <p>${theClass.title}</p>
     <!-- Stars image -->
@@ -72,7 +61,6 @@ function classItem(theClass) {
       <p class="price">${theClass.price}</p>
       <p class="price crossed">${theClass.crossedPrice}</p>
     </div>
-  </div>`
-  parent.firstElementChild.onclick = () => toDetail(theClass)
-  return parent.firstElementChild
+  </div>
+  </a>`
 }

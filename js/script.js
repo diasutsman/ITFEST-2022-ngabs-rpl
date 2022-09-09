@@ -5,7 +5,7 @@ const classList = document.getElementById('class-list')
 
 if (classList) {
     classes.forEach(theClass => {
-        classList.appendChild(classItem(theClass))
+        classList.innerHTML += classItem(theClass)
     })
     dragScroll()
 }
