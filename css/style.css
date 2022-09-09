@@ -550,7 +550,7 @@ h2.testi-title {
 /* Fading animation */
 .fade {
 	animation-name: fade;
-	animation-duration: .6s;
+	animation-duration: 0.6s;
 	animation-timing-function: ease;
 }
 
@@ -824,12 +824,60 @@ footer p.copyright {
 	.testimonial {
 		grid-template-columns: 1fr;
 	}
-	
 }
 
 /* Mobile L */
 @media screen and (max-width: 425px) {
 	.reason {
 		grid-template-columns: auto;
+	}
+}
+
+/* Galaxy Fold */
+@media screen and (max-width: 360px) {
+	nav {
+		grid-template-columns: repeat(3, 1fr);
+	}
+
+	/*nav button.login,
+	nav button.signup {
+		width: auto;
+		padding-left: 8px;
+		padding-right: 8px;
+	}*/
+
+	p,
+	h1,
+	span,
+	h3,
+	h4,
+	h5,
+	h6,
+	button {
+		font-size: 0.8em;
+	}
+
+	nav .logo-btn {
+		display: none;
+	}
+
+	.words h2,
+	.interests h2 {
+		font-size: 1.5em;
+	}
+
+	.interests,footer {
+		grid-template-columns: 1fr;
+	}
+
+	footer h3,
+	footer p.text {
+		font-size: 1em;
+	}
+
+	footer h3 {padding: 8px;}
+
+	.class-item {
+		width: 100%;
 	}
 }
