@@ -127,15 +127,15 @@ function testimonialsSlider() {
     let dots = document.getElementsByClassName("dot");
     showSlides(slideIndex);
 
-    
+
     function plusSlides(n) {
         showSlides(slideIndex += n);
     }
-    
+
     function currentSlide(n) {
         showSlides(slideIndex = n);
     }
-    
+
     document.querySelector('.next').onclick = () => plusSlides(1)
     document.querySelector('.prev').onclick = () => plusSlides(-1)
 
@@ -156,8 +156,55 @@ function testimonialsSlider() {
     setInterval(() => showSlides(++slideIndex), 5000)
 }
 
-try {
-    testimonialsSlider()
-}catch(e) {
+function makeElementTiltable(element) {
+    const tiltEffectSettings = {
+        max: 25,
+        perspective: 1000,
+        scale: 1.05,
+        speed: 500,
+        easing: "cubic-bezier(.03,.98,.52,.99)"
+    };
 
+    element.addEventListener("mouseenter", elementMouseEnter);
+    element.addEventListener("mousemove", elementMouseMove);
+    element.addEventListener("mouseleave", elementMouseLeave);
+
+    function elementMouseEnter(event) {
+        setTransition();
+    }
+
+    function elementMouseMove(event) {
+        const elementWidth = element.offsetWidth;
+        const elementHeight = element.offsetHeight;
+        const centerX = element.offsetLeft + elementWidth / 2;
+        const centerY = element.offsetTop + elementHeight / 2;
+        const mouseX = event.clientX - centerX;
+        const mouseY = event.clientY - centerY;
+        const rotateXUncapped = (+1) * (tiltEffectSettings.max * mouseY / (elementHeight / 2));
+        const rotateYUncapped = (-1) * (tiltEffectSettings.max * mouseX / (elementWidth / 2));
+        const rotateX = rotateXUncapped < -tiltEffectSettings.max ? -tiltEffectSettings.max : (rotateXUncapped > tiltEffectSettings.max ? tiltEffectSettings.max : rotateXUncapped);
+        const rotateY = rotateYUncapped < -tiltEffectSettings.max ? -tiltEffectSettings.max : (rotateYUncapped > tiltEffectSettings.max ? tiltEffectSettings.max : rotateYUncapped);
+
+        element.style.transform = `perspective(${tiltEffectSettings.perspective}px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) 
+                              scale3d(${tiltEffectSettings.scale}, ${tiltEffectSettings.scale}, ${tiltEffectSettings.scale})`;
+    }
+
+    function elementMouseLeave(event) {
+        element.style.transform = `perspective(${tiltEffectSettings.perspective}px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+        setTransition();
+    }
+
+    function setTransition() {
+        clearTimeout(element.transitionTimeoutId);
+        element.style.transition = `transform ${tiltEffectSettings.speed}ms ${tiltEffectSettings.easing}`;
+        element.transitionTimeoutId = setTimeout(() => {
+            element.style.transition = "";
+        }, tiltEffectSettings.speed);
+    }
 }
+
+try {
+    makeElementTiltable(document.querySelector(".hero > img"))
+    makeElementTiltable(document.querySelector(".hero h1 > span"))
+    testimonialsSlider()
+}catch(e) {}
