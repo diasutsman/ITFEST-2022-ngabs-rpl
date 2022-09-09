@@ -468,8 +468,8 @@ a:has(.class-item) {
 	align-items: center;
 }
 
-.testimonials .prev,
-.testimonials .next {
+.prev,
+.next {
 	cursor: pointer;
 	padding: 16px;
 	color: black;
@@ -480,12 +480,14 @@ a:has(.class-item) {
 	user-select: none;
 }
 
-.testimonials .next {
+.next {
 	border-radius: 0 3px 3px 0;
 }
 
 .prev:hover,
-.next:hover {
+.next:hover,
+.prev:active,
+.next:active {
 	color: white;
 	background-color: rgba(0, 0, 0, 0.8);
 }
@@ -515,8 +517,11 @@ h2.testi-title {
 
 /* The dots/bullets/indicators */
 .dots {
-	text-align: center;
 	margin-top: 16px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 16px;
 }
 .dot {
 	cursor: pointer;

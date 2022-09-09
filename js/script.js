@@ -112,8 +112,18 @@ scrollReveal()
 function testimonialsSlider() {
     let slideIndex = 1;
     let slides = document.getElementsByClassName("testimonial");
+    const dotsElement = document.querySelector('.dots')
+    dotsElement.append(
+        dotsElement.firstElementChild,
+        ...Array.from({ length: slides.length }, (_, i) => {
+            const span = document.createElement('span')
+            span.classList.add('dot')
+            span.addEventListener('click', () => currentSlide(i + 1))
+            return span
+        }),
+        dotsElement.lastElementChild
+    )
 
-    document.querySelector('.dots').innerHTML = Array.from({ length: slides.length }, (_, i) => `<span class="dot" onclick="currentSlide(${i + 1})"></span>`).join('')
     let dots = document.getElementsByClassName("dot");
     showSlides(slideIndex);
 
@@ -126,8 +136,8 @@ function testimonialsSlider() {
         showSlides(slideIndex = n);
     }
     
-    document.querySelector('.testimonials .next').onclick = () => plusSlides(1)
-    document.querySelector('.testimonials .prev').onclick = () => plusSlides(-1)
+    document.querySelector('.next').onclick = () => plusSlides(1)
+    document.querySelector('.prev').onclick = () => plusSlides(-1)
 
     function showSlides(n) {
         let i;
@@ -146,4 +156,8 @@ function testimonialsSlider() {
     setInterval(() => showSlides(++slideIndex), 3000)
 }
 
-testimonialsSlider()
+try {
+    testimonialsSlider()
+}catch(e) {
+
+}
