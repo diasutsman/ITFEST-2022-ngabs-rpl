@@ -17,7 +17,124 @@
   <meta name="author" content="Ngabs RPL">
 
   <link rel="stylesheet" href="../css/style.css" type="text/css">
+  <link rel="stylesheet" href="css/responsive.css">
   <link rel="shortcut icon" href="../img/ng.svg" type="image/x-icon">
+
+  <style>
+    nav {
+      grid-template-columns: 1fr 2fr 1fr;
+    }
+
+    nav a {
+      display: flex;
+      justify-content: center;
+    }
+
+    .container.detail {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      grid-template-areas:
+        'img detail'
+        'advantages advantages';
+      gap: 2rem;
+      margin: 64px auto;
+    }
+
+    div > :has(#img) {
+      overflow: hidden;
+      grid-area: img;
+      border-radius: 20px;
+    }
+
+    #img {
+      width: 100%;
+      height: 100%;
+      transition: var(--primary-transition);
+    }
+
+    #img:hover {
+      transform: scale(1.1);
+    }
+
+    .detail {
+      grid-area: detail;
+      color: var(--primary-color-variant);
+    }
+
+    .detail .ini-kursus {
+      color: black;
+      font-size: 40px;
+      font-weight: 600;
+    }
+
+    .detail .title {
+      font-size: 52px;
+    }
+
+    .detail .info {
+      font-size: 24px;
+    }
+
+    .detail .desc {
+      margin-top: 14px;
+      font-size: 20px;
+      color: black;
+    }
+
+    .advantages {
+      grid-area: advantages;
+    }
+
+    .advantages h2 {
+      font-size: 40px;
+      color: var(--primary-color-variant);
+    }
+
+    .advantages p:nth-child(4) {
+      text-align: center;
+      font-size: 32px;
+      margin: 32px;
+    }
+
+    .advantages div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .advantages ul {
+      list-style-image: url(checklist.svg);
+      font-weight: 600;
+      font-size: 20px;
+      color: #404040;
+      display: inherit;
+      flex-direction: inherit;
+      row-gap: 20px;
+    }
+
+    .advantages p {
+      margin: 16px 0;
+    }
+
+    .advantages p:nth-last-child(1) {
+      margin-top: 48px;
+    }
+
+    .advantages div:last-child {
+      margin-top: 45px;
+    }
+
+    /* Responsive */
+    @media screen and (max-width: 720px) {
+      .container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          'img'
+          'detail'
+          'advantages';
+      }
+    }
+  </style>
   <title>Detail</title>
 </head>
 
@@ -29,16 +146,79 @@
     </nav>
   </div>
 
-  <div class="container">
+  <div class="container detail">
     <!-- Idea: just make it grid -->
-    <h1 id="title">Ini Detail</h1>
-    <img id="img" src="" alt="">
+    <div>
+      <img id="img" src="" alt="">
+    </div>
+    <div class="detail">
+      <h1 class="ini-kursus">Kursus online</h1>
+      <h1 class="title">Ini Detail</h1>
+      <p class="info">(Terdiri dari 3 kelas) + bonus 1 kelas tambahan</p>
+      <p class="desc">Persiapan skillmu untuk menjadi seorang Web developer Expert
+        / Mahir Web Dev dengan mengikuti paket kursus ini.
+        Kamu akan belajar melalui studi kasus dan proyek yang bisa kamu praktikan.</p>
+    </div>
+
+    <div class="advantages reveal">
+      <h2 class="reveal">Tahukah Kamu berapa gaji web developer?</h2>
+      <p class="reveal">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus porro voluptas quibusdam labore quisquam
+        accusamus praesentium explicabo voluptatum quos autem!</p>
+      <p class="reveal">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat delectus, iste deserunt dolor accusamus
+        quibusdam facere quod laborum sint, velit repellat. Architecto vero mollitia culpa, non nemo nostrum, reiciendis
+        modi, odio sit nihil in enim vitae et iure? Sed est repudiandae consectetur eaque deserunt. Esse, expedita
+        totam. Atque provident consequatur impedit voluptatibus veniam reiciendis dolor, iusto id sit pariatur sapiente
+        quod nostrum tempora facilis asperiores, nam inventore optio. Ad, voluptate cupiditate voluptas iste culpa
+        architecto quidem in cumque ullam dicta rerum veniam hic voluptatibus, mollitia iure, enim quis. Nemo
+        praesentium dignissimos repellendus? Pariatur vel accusantium recusandae possimus delectus quod minus!</p>
+      <p class="reveal">Yang kamu dapatkan setelah belajar dari kelas ini</p>
+      <div class="reveal">
+        <ul>
+          <li>Memahami konsep dasar tentang pemrograman web</li>
+
+          <li>Mengambil peran sebagai Web Developer</li>
+
+          <li>Memiliki skill web developer fundamental yang kuat</li>
+
+          <li>Mengerjakan sebuah project dengan cepat dan efisien</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-wrapper" style="margin-top: 32px;">
+    <footer>
+      <div class="div-1">
+        <h3><span>Ngabs</span>Coding</h3>
+        <p class="text">Belajar coding dengan kurikulum industri.
+          Ambil sertifikasi serta kesempatan kerja
+          di berbagai perusahaan.</p>
+        <button>Kontak kami</button>
+      </div>
+      <div class="div-2">
+        <div class="links">
+          <a href="">Blog</a>
+          <a href="">Rewads</a>
+          <a href="">Showcase</a>
+          <a href="">Tentang Kami</a>
+          <a href="">FAQ</a>
+          <a href="">Cara membeli kelas</a>
+        </div>
+        <div class="socials">
+          <img src="../img/yt.svg" alt="">
+          <img src="../img/ig.svg" alt="">
+          <img src="../img/in.svg" alt="">
+        </div>
+      </div>
+      <p class="copyright">© 2019 - 2022, PT CALON JUARA IDN IT FEST.</p>
+    </footer>
   </div>
 
 
   <script src="../js/script.js"></script>
   <script>
-    const title = document.getElementById('title');
+    const title = document.querySelector('.title');
     const img = document.getElementById('img');
     const back = document.getElementById('back')
 
