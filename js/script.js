@@ -153,7 +153,7 @@ function testimonialsSlider() {
         dots[slideIndex - 1].className += " active-slider";
     }
 
-    setInterval(() => showSlides(++slideIndex), 3000)
+    setInterval(() => showSlides(++slideIndex), 5000)
 }
 
 try {
