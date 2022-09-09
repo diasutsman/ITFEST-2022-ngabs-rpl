@@ -464,38 +464,89 @@ a:has(.class-item) {
 
 /* Testimonials */
 .testimonials {
-	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-	gap: 32px;
+	display: flex;
+	align-items: center;
 }
 
-.testimonials h2 {
-	grid-column: 1/-1;
+.testimonials .prev,
+.testimonials .next {
+	cursor: pointer;
+	padding: 16px;
+	color: black;
+	font-weight: bold;
+	font-size: 32px;
+	transition: 0.6s ease;
+	border-radius: 3px 0 0 3px;
+	user-select: none;
+}
+
+.testimonials .next {
+	border-radius: 0 3px 3px 0;
+}
+
+.prev:hover,
+.next:hover {
+	color: white;
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+h2.testi-title {
 	font-weight: 700;
 	font-size: 64px;
-
 	text-align: center;
-
 	color: var(--primary-color-variant);
-
 	margin: 53px;
 }
 
 .testimonial {
 	width: fit-content;
 	background-color: white;
-	display: flex;
 	flex-direction: column;
 	row-gap: 16px;
 	align-items: flex-start;
 	padding: 8px;
 	border-radius: 15px;
 	cursor: pointer;
+	transition: var(--primary-duration) ease;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	column-gap: 16px;
 }
 
-.testimonial:hover {
-	transform: scale(1.1);
-	transition-timing-function: ease-out;
+/* The dots/bullets/indicators */
+.dots {
+	text-align: center;
+	margin-top: 16px;
+}
+.dot {
+	cursor: pointer;
+	height: 15px;
+	width: 15px;
+	margin: 0 2px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+}
+
+.active-slider,
+.dot:hover {
+	background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+	animation-name: fade;
+	animation-duration: 1.5s;
+}
+
+@keyframes fade {
+	from {
+		opacity: 0.4;
+	}
+	to {
+		opacity: 1;
+	}
 }
 
 .testimonial img.student {
@@ -503,6 +554,10 @@ a:has(.class-item) {
 	background: url(../img/bg-testi.svg), var(--primary-color-variant);
 	background-size: contain;
 	border-radius: 10px;
+	align-self: center;
+	grid-row: 1/5;
+	align-self: center;
+	object-fit: contain;
 }
 
 .testimonial p.nama {
@@ -524,7 +579,7 @@ a:has(.class-item) {
 
 .testimonial img.company {
 	height: 69px;
-	align-self: flex-end;
+	justify-self: end;
 }
 
 /* Engagement */
@@ -689,26 +744,6 @@ footer p.copyright {
 		/*grid-template-columns: repeat(2, 1fr);*/
 		padding: 0;
 	}
-
-	.testimonial {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		column-gap: 16px;
-	}
-
-	.testimonial img.student {
-		grid-row: 1/5;
-		align-self: center;
-	}
-
-	.testimonial img.company {
-		justify-self: end;
-	}
-
-	.testimonials {
-		row-gap: 32px;
-		grid-template-columns: 1fr;
-	}
 }
 
 /* Mobile Screen */
@@ -771,12 +806,9 @@ footer p.copyright {
 	}
 
 	.testimonial {
-		display: flex;
+		grid-template-columns: 1fr;
 	}
-
-	.testimonial img.student {
-		grid-row: 1/2;
-	}
+	
 }
 
 /* Mobile L */

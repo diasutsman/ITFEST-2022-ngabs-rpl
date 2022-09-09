@@ -107,3 +107,43 @@ function addAltsToImg() {
 }
 addAltsToImg()
 scrollReveal()
+
+// testimonials slider
+function testimonialsSlider() {
+    let slideIndex = 1;
+    let slides = document.getElementsByClassName("testimonial");
+
+    document.querySelector('.dots').innerHTML = Array.from({ length: slides.length }, (_, i) => `<span class="dot" onclick="currentSlide(${i + 1})"></span>`).join('')
+    let dots = document.getElementsByClassName("dot");
+    showSlides(slideIndex);
+
+    
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+    
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+    
+    document.querySelector('.testimonials .next').onclick = () => plusSlides(1)
+    document.querySelector('.testimonials .prev').onclick = () => plusSlides(-1)
+
+    function showSlides(n) {
+        let i;
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active-slider", "");
+        }
+        slides[slideIndex - 1].style.display = "grid";
+        dots[slideIndex - 1].className += " active-slider";
+    }
+
+    //setInterval(() => showSlides(++slideIndex), 3000)
+}
+
+testimonialsSlider()
